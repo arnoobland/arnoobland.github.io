@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnoob Land</title>
+  <meta name="description" content="Arnoob Land: a calm nature game for children. Help a little bunny make a garden home again, befriend 30 animals through the seasons, and save up for the golden crown.">
+  <meta property="og:title" content="Arnoob Land">
+  <meta property="og:description" content="A calm nature game for children: befriend animals through the seasons and learn to save.">
+  <meta property="og:image" content="images/feature-graphic.jpg">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    :root {
+      --sky: #9fd3e6;
+      --hill: #6fa86a;
+      --hill-dark: #4e8a55;
+      --paper: #fbf5e8;
+      --paper-edge: #e3d6bd;
+      --ink: #6e503c;
+      --gold: #fac83c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(var(--sky) 0, #c8e6ef 380px, var(--hill) 380px, var(--hill-dark) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+    header { text-align: center; }
+    header img.logo {
+      width: 128px;
+      height: 128px;
+      filter: drop-shadow(0 6px 10px rgba(40, 60, 40, 0.25));
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 2.6rem;
+      color: #fffcf0;
+      text-shadow: 0 3px 0 #5f8f9e, 0 0 12px rgba(40, 80, 90, 0.35);
+    }
+    .tagline {
+      margin: 4px 0 24px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--ink);
+    }
+    .card {
+      background: var(--paper);
+      border-radius: 22px;
+      box-shadow: 0 5px 0 var(--paper-edge), 0 10px 24px rgba(30, 50, 30, 0.18);
+      padding: 24px 24px 20px;
+      margin: 0 0 24px;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    ul.features { list-style: none; padding: 0; margin: 0; }
+    ul.features li {
+      position: relative;
+      padding: 0 0 10px 30px;
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0.45em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 2px 0 #cd9123;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .shots img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(30, 50, 30, 0.2);
+    }
+    .links { text-align: center; }
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--hill);
+      box-shadow: 0 4px 0 var(--hill-dark);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button:hover { background: #7cb877; }
+    .button.light {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 4px 0 var(--paper-edge);
+      border: 2px solid var(--paper-edge);
+    }
+    footer {
+      text-align: center;
+      color: #eef6e6;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img class="logo" src="images/logo.png" alt="The Arnoob Land bunny wearing a golden crown">
+      <h1>Arnoob Land</h1>
+      <p class="tagline">A calm nature game for children</p>
+    </header>
+
+    <section class="card">
+      <img class="banner" src="images/feature-graphic.jpg" alt="A crowned bunny in a spring garden with flowers, a duck pond and the title Arnoob Land">
+      <p>
+        A quiet garden needs your help. A little bunny wants to make it a home again,
+        one seed at a time. Plant flowers, build a pond, set out treats and watch who
+        comes to visit. Every season brings new animal friends: bees and ducks in spring,
+        turtles and hummingbirds in summer, foxes and badgers in autumn, snowy owls and
+        otters in winter.
+      </p>
+      <ul class="features">
+        <li><strong>Calm and gentle:</strong> no timers, no score to lose, nothing to fail.</li>
+        <li><strong>Only nature sounds:</strong> wind, water, rain, birds and animal calls. No music.</li>
+        <li><strong>Four seasons and 30 animals</strong> to befriend, with golden animals and rare moments to discover.</li>
+        <li><strong>Learn to care for friends:</strong> notice what each animal needs, grant their wishes, and watch friendships grow.</li>
+        <li><strong>Learn to save:</strong> put coins in your savings jar, watch it grow each day, and save up for the golden crown.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>In the garden</h2>
+      <div class="shots">
+        <img src="images/1-spring.jpg" alt="The spring garden with flowers and animal friends" loading="lazy">
+        <img src="images/3-savings-jar.jpg" alt="The savings jar, saving up for the golden crown" loading="lazy">
+        <img src="images/4-book.jpg" alt="The book of animal friends" loading="lazy">
+        <img src="images/8-winter.jpg" alt="The garden in winter" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card links">
+      <h2>For parents</h2>
+      <p>
+        No accounts, no chat and no purchases. Videos play only when the player chooses
+        to watch one for a small in-game gift.
+      </p>
+      <a class="button" href="privacy-policy.html">Privacy Policy</a>
+      <a class="button light" href="app-ads.txt">app-ads.txt</a>
+    </section>
+
+    <footer>&copy; 2026 Arnoob Land</footer>
+  </main>
+</body>
+</html>
