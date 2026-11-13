@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnoob Land</title>
+  <meta name="description" content="Arnoob Land：一款给孩子玩的安静自然游戏。帮助一只小兔子让花园重新成为家，在四季里和80种动物交朋友，经营一座小农场，再存钱买金色王冠。">
+  <meta property="og:title" content="Arnoob Land">
+  <meta property="og:description" content="一款给孩子玩的安静自然游戏：在四季里和动物交朋友，经营小农场，学会算数和存钱。">
+  <meta property="og:image" content="https://arnoobland.github.io/images/feature-graphic.jpg">
+  <link rel="alternate" hreflang="ar" href="https://arnoobland.github.io/ar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://arnoobland.github.io/zh/">
+  <link rel="alternate" hreflang="en" href="https://arnoobland.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://arnoobland.github.io/fr/">
+  <link rel="alternate" hreflang="de" href="https://arnoobland.github.io/de/">
+  <link rel="alternate" hreflang="ja" href="https://arnoobland.github.io/ja/">
+  <link rel="alternate" hreflang="ru" href="https://arnoobland.github.io/ru/">
+  <link rel="alternate" hreflang="es" href="https://arnoobland.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://arnoobland.github.io/">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <style>
+    :root {
+      --sky: #9fd3e6;
+      --hill: #6fa86a;
+      --hill-dark: #4e8a55;
+      --paper: #fbf5e8;
+      --paper-edge: #e3d6bd;
+      --ink: #6e503c;
+      --gold: #fac83c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(var(--sky) 0, #c8e6ef 380px, var(--hill) 380px, var(--hill-dark) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    :lang(ar) body, body:lang(ar) { font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    nav.langs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 0 16px;
+    }
+    nav.langs a {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(251, 245, 232, 0.75);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav.langs a[aria-current] {
+      background: var(--hill);
+      color: #fff;
+      font-weight: bold;
+    }
+    header { text-align: center; }
+    header img.logo {
+      width: 128px;
+      height: 128px;
+      filter: drop-shadow(0 6px 10px rgba(40, 60, 40, 0.25));
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 2.6rem;
+      color: #fffcf0;
+      text-shadow: 0 3px 0 #5f8f9e, 0 0 12px rgba(40, 80, 90, 0.35);
+    }
+    .tagline {
+      margin: 4px 0 24px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--ink);
+    }
+    .card {
+      background: var(--paper);
+      border-radius: 22px;
+      box-shadow: 0 5px 0 var(--paper-edge), 0 10px 24px rgba(30, 50, 30, 0.18);
+      padding: 24px 24px 20px;
+      margin: 0 0 24px;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    ul.features { list-style: none; padding: 0; margin: 0; }
+    ul.features li {
+      position: relative;
+      padding: 0 0 10px 0;
+      padding-inline-start: 30px;
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 4px;
+      top: 0.45em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 2px 0 #cd9123;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .shots img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(30, 50, 30, 0.2);
+    }
+    .links { text-align: center; }
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--hill);
+      box-shadow: 0 4px 0 var(--hill-dark);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button:hover { background: #7cb877; }
+    .button.light {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 4px 0 var(--paper-edge);
+      border: 2px solid var(--paper-edge);
+    }
+    footer {
+      text-align: center;
+      color: #eef6e6;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0 0 6px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="语言">
+      <a href="../ar/index.html" hreflang="ar" lang="ar">العربية</a>
+      <a href="../zh/index.html" hreflang="zh" lang="zh" aria-current="page">中文（简体）</a>
+      <a href="../index.html" hreflang="en" lang="en">English</a>
+      <a href="../fr/index.html" hreflang="fr" lang="fr">Français</a>
+      <a href="../de/index.html" hreflang="de" lang="de">Deutsch</a>
+      <a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a>
+      <a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a>
+      <a href="../es/index.html" hreflang="es" lang="es">Español</a>
+    </nav>
+    <header>
+      <img class="logo" src="../images/logo.png" alt="戴着金色王冠的 Arnoob Land 小兔子">
+      <h1>Arnoob Land</h1>
+      <p class="tagline">一款给孩子玩的安静自然游戏</p>
+    </header>
+
+    <section class="card">
+      <img class="banner" src="../images/feature-graphic.jpg" alt="春天花园里戴王冠的小兔子，有花朵、有鸭子的池塘和标题 Arnoob Land">
+      <p>一座安静的花园需要你的帮助。一只小兔子想让这里重新成为家，一颗种子接一颗种子。种花，建池塘，放出零食，看看谁会来拜访。每个季节都会来新的动物朋友：春天有蜜蜂和鸭子，夏天有乌龟和蜂鸟，秋天有狐狸和獾，冬天有雪鸮和水獭。</p>
+      <ul class="features">
+        <li><strong>安静又温柔：</strong> 没有计时，没有会输掉的分数，也不会失败。</li>
+        <li><strong>只有大自然的声音：</strong> 风声、水声、雨声、鸟鸣和动物的叫声。没有音乐。</li>
+        <li><strong>四个季节，80种动物</strong> 等你去交朋友，还有金色动物和难得的奇妙时刻等你发现。</li>
+        <li><strong>看月亮：</strong> 一夜又一夜，月亮从新月变成满月再变回去，猫头鹰最喜欢满月的夜晚。</li>
+        <li><strong>拍照片</strong> 给你的动物朋友拍照，放进相册：每张照片都能赚一个金币。</li>
+        <li><strong>学会照顾朋友：</strong> 留意每种动物需要什么，为它建个家（池塘、木头堆、浆果丛……），新朋友就会来得更快；帮它们实现愿望，让两个朋友一起玩，送朋友一朵花，看着友谊慢慢长大。</li>
+        <li><strong>经营一座小农场：</strong> 喂母鸡，养蜜蜂和山羊，摘苹果、浆果和花，再拿到热闹的小摊上卖给来买东西的朋友。买来的东西可以半价卖回，但池塘、植物、种子和树不行。</li>
+        <li><strong>当花园小帮手：</strong> 拔草、扫落叶、清扫积雪，装满堆肥堆，就能多一份收成，农场也会变快；还要给花和果树浇水。每做一件事，花园小帮手的等级就会提高。</li>
+        <li><strong>烘焙和完成订单：</strong> 把鸡蛋、羊奶、蜂蜜、苹果和浆果做成蛋糕、派、挞和果酱，卖出更好的价钱；朋友带来小订单时，算一算总价。</li>
+        <li><strong>边玩边算数：</strong> 每收一个鸡蛋、卖一个鸡蛋，每赚一个金币、花一个金币，都会显示成简单的算式，比如 3 + 2 = 5。</li>
+        <li><strong>学会存钱：</strong> 把金币放进存钱罐，看它每天长大一点，存钱买金色王冠。</li>
+        <li><strong>一块一块做出金色王冠：</strong> 存钱会让它装满金子，朋友们会带来它的三颗宝石。</li>
+        <li><strong>每个季节都有安静的小游戏：</strong> 钓鱼（鱼会被放回水里）、抓萤火虫（它们会飞走）、秋天收坚果和苹果，还有堆雪堡。</li>
+        <li><strong>和朋友捉迷藏：</strong> 交到五个朋友后，它们会藏在花园各处，一起玩耍；找到所有朋友后，金色朋友也会更常来。</li>
+        <li><strong>八种语言：</strong> 英语、阿拉伯语、中文（简体）、法语、德语、日语、俄语和西班牙语。游戏会用你手机的语言开始（其他语言则用英语），在开始画面点地球图标就能更换。游戏原本用英语写成，其他七种语言是在人工智能的帮助下翻译的。</li>
+        <li><strong>一段漫长而温柔的旅程：</strong> 可以花很多天玩完一整年，也可以只玩一个季节的短游戏。你的花园会随时保存。</li>
+        <li><strong>如果你喜欢，还有梦想花园：</strong> 存钱买秋千、小桥、喷泉、树屋等等。朋友们会来使用它们，还可能有四位神秘朋友来看看。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>在花园里</h2>
+      <div class="shots">
+        <img src="../images/zh/1-farm-market.jpg" alt="花园：朋友们来小摊买东西，还有鸡舍、蜂箱和山羊" loading="lazy">
+        <img src="../images/zh/2-inventory.jpg" alt="你的商品：鸡蛋、蜂蜜、苹果等等，还有像 2 + 2 = 4 这样的算式" loading="lazy">
+        <img src="../images/zh/3-oven.jpg" alt="烤炉：蜂蜜蛋糕、苹果派、浆果挞和果酱，每样都比原料更值钱" loading="lazy">
+        <img src="../images/zh/4-crown-jar.jpg" alt="存钱罐，为金色王冠存钱" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card links">
+      <h2>给家长</h2>
+      <p>没有账号，没有聊天，也没有购买。只有当孩子自己选择观看时才会播放视频，并得到游戏里的一份小礼物：一篮可以卖的商品、几个金币、给花园的惊喜、种子或零食。</p>
+      <a class="button" href="privacy-policy.html">隐私政策</a>
+      <a class="button light" href="../app-ads.txt">app-ads.txt</a>
+    </section>
+
+    <footer>
+      <p>本页面由英语在人工智能的帮助下翻译。</p>
+      <p>&copy; 2026 Arnoob Land</p>
+    </footer>
+  </main>
+</body>
+</html>

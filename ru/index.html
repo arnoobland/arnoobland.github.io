@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnoob Land</title>
+  <meta name="description" content="Arnoob Land — спокойная игра о природе для детей. Помоги маленькому зайчику снова сделать сад домом, подружись с 80 зверями в разные времена года, веди маленькую ферму и копи на золотую корону.">
+  <meta property="og:title" content="Arnoob Land">
+  <meta property="og:description" content="Спокойная игра о природе для детей: дружи со зверями в разные времена года, веди маленькую ферму и учись считать и копить.">
+  <meta property="og:image" content="https://arnoobland.github.io/images/feature-graphic.jpg">
+  <link rel="alternate" hreflang="ar" href="https://arnoobland.github.io/ar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://arnoobland.github.io/zh/">
+  <link rel="alternate" hreflang="en" href="https://arnoobland.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://arnoobland.github.io/fr/">
+  <link rel="alternate" hreflang="de" href="https://arnoobland.github.io/de/">
+  <link rel="alternate" hreflang="ja" href="https://arnoobland.github.io/ja/">
+  <link rel="alternate" hreflang="ru" href="https://arnoobland.github.io/ru/">
+  <link rel="alternate" hreflang="es" href="https://arnoobland.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://arnoobland.github.io/">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <style>
+    :root {
+      --sky: #9fd3e6;
+      --hill: #6fa86a;
+      --hill-dark: #4e8a55;
+      --paper: #fbf5e8;
+      --paper-edge: #e3d6bd;
+      --ink: #6e503c;
+      --gold: #fac83c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(var(--sky) 0, #c8e6ef 380px, var(--hill) 380px, var(--hill-dark) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    :lang(ar) body, body:lang(ar) { font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    nav.langs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 0 16px;
+    }
+    nav.langs a {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(251, 245, 232, 0.75);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav.langs a[aria-current] {
+      background: var(--hill);
+      color: #fff;
+      font-weight: bold;
+    }
+    header { text-align: center; }
+    header img.logo {
+      width: 128px;
+      height: 128px;
+      filter: drop-shadow(0 6px 10px rgba(40, 60, 40, 0.25));
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 2.6rem;
+      color: #fffcf0;
+      text-shadow: 0 3px 0 #5f8f9e, 0 0 12px rgba(40, 80, 90, 0.35);
+    }
+    .tagline {
+      margin: 4px 0 24px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--ink);
+    }
+    .card {
+      background: var(--paper);
+      border-radius: 22px;
+      box-shadow: 0 5px 0 var(--paper-edge), 0 10px 24px rgba(30, 50, 30, 0.18);
+      padding: 24px 24px 20px;
+      margin: 0 0 24px;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    ul.features { list-style: none; padding: 0; margin: 0; }
+    ul.features li {
+      position: relative;
+      padding: 0 0 10px 0;
+      padding-inline-start: 30px;
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 4px;
+      top: 0.45em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 2px 0 #cd9123;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .shots img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(30, 50, 30, 0.2);
+    }
+    .links { text-align: center; }
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--hill);
+      box-shadow: 0 4px 0 var(--hill-dark);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button:hover { background: #7cb877; }
+    .button.light {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 4px 0 var(--paper-edge);
+      border: 2px solid var(--paper-edge);
+    }
+    footer {
+      text-align: center;
+      color: #eef6e6;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0 0 6px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="Языки">
+      <a href="../ar/index.html" hreflang="ar" lang="ar">العربية</a>
+      <a href="../zh/index.html" hreflang="zh" lang="zh">中文（简体）</a>
+      <a href="../index.html" hreflang="en" lang="en">English</a>
+      <a href="../fr/index.html" hreflang="fr" lang="fr">Français</a>
+      <a href="../de/index.html" hreflang="de" lang="de">Deutsch</a>
+      <a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a>
+      <a href="../ru/index.html" hreflang="ru" lang="ru" aria-current="page">Русский</a>
+      <a href="../es/index.html" hreflang="es" lang="es">Español</a>
+    </nav>
+    <header>
+      <img class="logo" src="../images/logo.png" alt="Зайчик из Arnoob Land в золотой короне">
+      <h1>Arnoob Land</h1>
+      <p class="tagline">Спокойная игра о природе для детей</p>
+    </header>
+
+    <section class="card">
+      <img class="banner" src="../images/feature-graphic.jpg" alt="Зайчик в короне в весеннем саду с цветами, прудом с уткой и надписью Arnoob Land">
+      <p>Тихому саду нужна твоя помощь. Маленький зайчик хочет снова сделать его домом, семечко за семечком. Сажай цветы, построй пруд, раскладывай угощения и смотри, кто придёт в гости. Каждый сезон приносит новых друзей-зверей: пчёл и уток весной, черепах и колибри летом, лис и барсуков осенью, белых сов и выдр зимой.</p>
+      <ul class="features">
+        <li><strong>Спокойно и мягко:</strong> ни таймеров, ни очков, которые можно потерять, ни проигрышей.</li>
+        <li><strong>Только звуки природы:</strong> ветер, вода, дождь, птицы и голоса зверей. Никакой музыки.</li>
+        <li><strong>Четыре сезона и 80 зверей,</strong> с которыми можно подружиться, а ещё золотые звери и редкие мгновения.</li>
+        <li><strong>Следи за луной:</strong> ночь за ночью она меняется от новолуния до полнолуния и обратно, а совы любят ночи полнолуния.</li>
+        <li><strong>Фотографируй</strong> своих друзей-зверей для альбома: каждое фото приносит монету.</li>
+        <li><strong>Учись заботиться о друзьях:</strong> замечай, что нужно каждому зверю, и строй ему дом (пруд, поленницу, ягодный куст...), чтобы новые друзья приходили быстрее; исполняй их желания, помогай двум друзьям играть вместе, дари другу цветок и смотри, как растёт дружба.</li>
+        <li><strong>Веди маленькую ферму:</strong> корми курочек, держи пчёл и козу, собирай яблоки, ягоды и цветы и продавай их за оживлённым прилавком друзьям, которые приходят за покупками. Купленное можно продать обратно за полцены, кроме пруда, растений, семян и деревьев.</li>
+        <li><strong>Будь помощником сада:</strong> пропалывай сорняки, сгребай листья и счищай снег в компостную кучу — она даёт лишний урожай и ускоряет ферму, — и поливай цветы и фруктовые деревья. Каждое дело повышает твой уровень помощника сада.</li>
+        <li><strong>Пеки и выполняй заказы:</strong> превращай яйца, молоко, мёд, яблоки и ягоды в пирожные, пироги, тарталетки и джем, которые стоят дороже, и складывай сумму, когда друг приносит маленький заказ.</li>
+        <li><strong>Считай, пока играешь:</strong> каждое собранное или проданное яйцо и каждая заработанная или потраченная монета показываются простым примером, например 3 + 2 = 5.</li>
+        <li><strong>Учись копить:</strong> клади монеты в копилку, смотри, как она понемногу растёт каждый день, и копи на золотую корону.</li>
+        <li><strong>Собирай золотую корону по кусочкам:</strong> сбережения наполняют её золотом, а три самоцвета приносят друзья.</li>
+        <li><strong>Спокойная игра в каждом сезоне:</strong> рыбалка (рыбки возвращаются в воду), светлячки (они улетают на волю), осенний сбор орехов и яблок и снежная крепость.</li>
+        <li><strong>Прятки с друзьями:</strong> с пятого друга друзья прячутся по всему саду и играют вместе, а когда ты найдёшь всех, золотые друзья приходят чаще.</li>
+        <li><strong>Восемь языков:</strong> английский, арабский, китайский (упрощённый), французский, немецкий, японский, русский и испанский. Игра начинается на языке твоего телефона (на английском — для любого другого), а глобус на главном экране меняет язык. Игра написана на английском; остальные семь языков переведены с помощью ИИ.</li>
+        <li><strong>Долгое спокойное путешествие:</strong> играй целый год много дней подряд или в более короткую игру на один сезон. Сад сохраняется по ходу игры.</li>
+        <li><strong>Сад мечты, если захочешь:</strong> копи на качели, мостик, фонтан, домик на дереве и многое другое. Друзья ими пользуются, а четыре тайных друга могут прийти на них посмотреть.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>В саду</h2>
+      <div class="shots">
+        <img src="../images/ru/1-farm-market.jpg" alt="Сад: прилавок, к которому приходят за покупками друзья, курятник, улей и коза" loading="lazy">
+        <img src="../images/ru/2-inventory.jpg" alt="Твои товары: яйца, мёд, яблоки и другое, с примером вроде 2 + 2 = 4" loading="lazy">
+        <img src="../images/ru/3-oven.jpg" alt="Печь: медовые пирожные, яблочные пироги, ягодные тарталетки и джем, каждые стоят больше, чем их ингредиенты" loading="lazy">
+        <img src="../images/ru/4-crown-jar.jpg" alt="Копилка: копим на золотую корону" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card links">
+      <h2>Для родителей</h2>
+      <p>Никаких аккаунтов, чатов и покупок. Видео показываются, только когда ребёнок сам решает посмотреть одно из них, ради небольшого подарка в игре: корзинки товаров для продажи, нескольких монет, сюрприза для сада, семян или угощений.</p>
+      <a class="button" href="privacy-policy.html">Политика конфиденциальности</a>
+      <a class="button light" href="../app-ads.txt">app-ads.txt</a>
+    </section>
+
+    <footer>
+      <p>Эта страница переведена с английского с помощью ИИ.</p>
+      <p>&copy; 2026 Arnoob Land</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnoob Land</title>
+  <meta name="description" content="Arnoob Land: a calm nature game for children. Help a little bunny make a garden home again, befriend 80 animals through the seasons, run a little farm, and save up for the golden crown.">
+  <meta property="og:title" content="Arnoob Land">
+  <meta property="og:description" content="A calm nature game for children: befriend animals through the seasons, run a little farm, and learn to count and save.">
+  <meta property="og:image" content="https://arnoobland.github.io/images/feature-graphic.jpg">
+  <link rel="alternate" hreflang="ar" href="https://arnoobland.github.io/ar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://arnoobland.github.io/zh/">
+  <link rel="alternate" hreflang="en" href="https://arnoobland.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://arnoobland.github.io/fr/">
+  <link rel="alternate" hreflang="de" href="https://arnoobland.github.io/de/">
+  <link rel="alternate" hreflang="ja" href="https://arnoobland.github.io/ja/">
+  <link rel="alternate" hreflang="ru" href="https://arnoobland.github.io/ru/">
+  <link rel="alternate" hreflang="es" href="https://arnoobland.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://arnoobland.github.io/">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    :root {
+      --sky: #9fd3e6;
+      --hill: #6fa86a;
+      --hill-dark: #4e8a55;
+      --paper: #fbf5e8;
+      --paper-edge: #e3d6bd;
+      --ink: #6e503c;
+      --gold: #fac83c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(var(--sky) 0, #c8e6ef 380px, var(--hill) 380px, var(--hill-dark) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    :lang(ar) body, body:lang(ar) { font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    nav.langs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 0 16px;
+    }
+    nav.langs a {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(251, 245, 232, 0.75);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav.langs a[aria-current] {
+      background: var(--hill);
+      color: #fff;
+      font-weight: bold;
+    }
+    header { text-align: center; }
+    header img.logo {
+      width: 128px;
+      height: 128px;
+      filter: drop-shadow(0 6px 10px rgba(40, 60, 40, 0.25));
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 2.6rem;
+      color: #fffcf0;
+      text-shadow: 0 3px 0 #5f8f9e, 0 0 12px rgba(40, 80, 90, 0.35);
+    }
+    .tagline {
+      margin: 4px 0 24px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--ink);
+    }
+    .card {
+      background: var(--paper);
+      border-radius: 22px;
+      box-shadow: 0 5px 0 var(--paper-edge), 0 10px 24px rgba(30, 50, 30, 0.18);
+      padding: 24px 24px 20px;
+      margin: 0 0 24px;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    ul.features { list-style: none; padding: 0; margin: 0; }
+    ul.features li {
+      position: relative;
+      padding: 0 0 10px 0;
+      padding-inline-start: 30px;
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 4px;
+      top: 0.45em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 2px 0 #cd9123;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .shots img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(30, 50, 30, 0.2);
+    }
+    .links { text-align: center; }
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--hill);
+      box-shadow: 0 4px 0 var(--hill-dark);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button:hover { background: #7cb877; }
+    .button.light {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 4px 0 var(--paper-edge);
+      border: 2px solid var(--paper-edge);
+    }
+    footer {
+      text-align: center;
+      color: #eef6e6;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0 0 6px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="Languages">
+      <a href="ar/index.html" hreflang="ar" lang="ar">العربية</a>
+      <a href="zh/index.html" hreflang="zh" lang="zh">中文（简体）</a>
+      <a href="index.html" hreflang="en" lang="en" aria-current="page">English</a>
+      <a href="fr/index.html" hreflang="fr" lang="fr">Français</a>
+      <a href="de/index.html" hreflang="de" lang="de">Deutsch</a>
+      <a href="ja/index.html" hreflang="ja" lang="ja">日本語</a>
+      <a href="ru/index.html" hreflang="ru" lang="ru">Русский</a>
+      <a href="es/index.html" hreflang="es" lang="es">Español</a>
+    </nav>
+    <header>
+      <img class="logo" src="images/logo.png" alt="The Arnoob Land bunny wearing a golden crown">
+      <h1>Arnoob Land</h1>
+      <p class="tagline">A calm nature game for children</p>
+    </header>
+
+    <section class="card">
+      <img class="banner" src="images/feature-graphic.jpg" alt="A crowned bunny in a spring garden with flowers, a duck pond and the title Arnoob Land">
+      <p>A quiet garden needs your help. A little bunny wants to make it a home again, one seed at a time. Plant flowers, build a pond, set out treats and watch who comes to visit. Every season brings new animal friends: bees and ducks in spring, turtles and hummingbirds in summer, foxes and badgers in autumn, snowy owls and otters in winter.</p>
+      <ul class="features">
+        <li><strong>Calm and gentle:</strong> no timers, no score to lose, nothing to fail.</li>
+        <li><strong>Only nature sounds:</strong> wind, water, rain, birds and animal calls. No music.</li>
+        <li><strong>Four seasons and 80 animals</strong> to befriend, with golden animals and rare moments to discover.</li>
+        <li><strong>Watch the moon:</strong> night after night it changes from new moon to full moon and back, and owls love full-moon nights.</li>
+        <li><strong>Take photos</strong> of your animal friends for your album: every photo earns a coin.</li>
+        <li><strong>Learn to care for friends:</strong> notice what each animal needs and build it a home (a pond, a log pile, a berry bush...) so new friends come sooner, grant their wishes, help two friends play together, give a friend a flower, and watch friendships grow.</li>
+        <li><strong>Run a little farm:</strong> feed the hens, keep bees and a goat, pick apples, berries and flowers, and sell them at your busy market stall to the friends who come to buy. Things you bought sell back for half their price, but not the pond, plants, seeds or trees.</li>
+        <li><strong>Be a garden helper:</strong> pull weeds, rake leaves and clear snow for the compost heap, which brings an extra harvest and a faster farm, and water the flowers and fruit trees. Every job done raises your Garden helper level.</li>
+        <li><strong>Bake and fill orders:</strong> turn eggs, milk, honey, apples and berries into cakes, pies, tarts and jam that sell for more, and add up the bill when a friend brings a little order.</li>
+        <li><strong>Count as you play:</strong> every egg collected or sold, and every coin earned or spent, shows as a simple sum, like 3 + 2 = 5.</li>
+        <li><strong>Learn to save:</strong> put coins in your savings jar, watch it grow a little each day, and save up for the golden crown.</li>
+        <li><strong>Build the golden crown piece by piece:</strong> saving fills it with gold, and friends bring its three gems.</li>
+        <li><strong>A calm game in every season:</strong> fishing (the fish swim free again), gathering fireflies (they fly free), the autumn harvest of nuts and apples, and building a snow fort.</li>
+        <li><strong>Hide-and-seek with friends:</strong> from your fifth friend, friends hide around the garden and play together, and once you have found them all, golden friends visit more often.</li>
+        <li><strong>Eight languages:</strong> English, Arabic, Chinese (Simplified), French, German, Japanese, Russian and Spanish. The game starts in your phone's language (English for any other), and the globe on the title screen changes it. The game was written in English; the other seven languages were translated with the help of AI.</li>
+        <li><strong>A long, gentle journey:</strong> play the whole year over many days, or a shorter game in one season. Your garden is saved as you go.</li>
+        <li><strong>A dream garden, if you like:</strong> save for a swing, a little bridge, a fountain, a treehouse and more. Your friends use them, and four secret friends may come to see them.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>In the garden</h2>
+      <div class="shots">
+        <img src="images/1-farm-market.jpg" alt="The garden: the market stall with friends coming to buy, the hen house, the beehive and the goat" loading="lazy">
+        <img src="images/2-inventory.jpg" alt="Your goods: eggs, honey, apples and more, with a sum like 2 + 2 = 4" loading="lazy">
+        <img src="images/3-oven.jpg" alt="The oven: honey cakes, apple pies, berry tarts and berry and apple jam, each worth more than what goes in" loading="lazy">
+        <img src="images/4-crown-jar.jpg" alt="The savings jar, saving up for the golden crown" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card links">
+      <h2>For parents</h2>
+      <p>No accounts, no chat and no purchases. Videos play only when the player chooses to watch one, for a small in-game gift: a basket of goods to sell, a few coins, a surprise for the garden, seeds or treats.</p>
+      <a class="button" href="privacy-policy.html">Privacy Policy</a>
+      <a class="button light" href="app-ads.txt">app-ads.txt</a>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Arnoob Land</p>
+    </footer>
+  </main>
+</body>
+</html>

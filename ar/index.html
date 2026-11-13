@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnoob Land</title>
+  <meta name="description" content="Arnoob Land: لعبة طبيعة هادئة للأطفال. ساعد أرنبًا صغيرًا ليجعل الحديقة بيتًا من جديد، وصادِق ٨٠ حيوانًا عبر الفصول، وأدِر مزرعة صغيرة، وادّخر لتشتري التاج الذهبي.">
+  <meta property="og:title" content="Arnoob Land">
+  <meta property="og:description" content="لعبة طبيعة هادئة للأطفال: صادِق الحيوانات عبر الفصول، وأدِر مزرعة صغيرة، وتعلّم الحساب والادّخار.">
+  <meta property="og:image" content="https://arnoobland.github.io/images/feature-graphic.jpg">
+  <link rel="alternate" hreflang="ar" href="https://arnoobland.github.io/ar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://arnoobland.github.io/zh/">
+  <link rel="alternate" hreflang="en" href="https://arnoobland.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://arnoobland.github.io/fr/">
+  <link rel="alternate" hreflang="de" href="https://arnoobland.github.io/de/">
+  <link rel="alternate" hreflang="ja" href="https://arnoobland.github.io/ja/">
+  <link rel="alternate" hreflang="ru" href="https://arnoobland.github.io/ru/">
+  <link rel="alternate" hreflang="es" href="https://arnoobland.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://arnoobland.github.io/">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <style>
+    :root {
+      --sky: #9fd3e6;
+      --hill: #6fa86a;
+      --hill-dark: #4e8a55;
+      --paper: #fbf5e8;
+      --paper-edge: #e3d6bd;
+      --ink: #6e503c;
+      --gold: #fac83c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(var(--sky) 0, #c8e6ef 380px, var(--hill) 380px, var(--hill-dark) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    :lang(ar) body, body:lang(ar) { font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    nav.langs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 0 16px;
+    }
+    nav.langs a {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(251, 245, 232, 0.75);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav.langs a[aria-current] {
+      background: var(--hill);
+      color: #fff;
+      font-weight: bold;
+    }
+    header { text-align: center; }
+    header img.logo {
+      width: 128px;
+      height: 128px;
+      filter: drop-shadow(0 6px 10px rgba(40, 60, 40, 0.25));
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 2.6rem;
+      color: #fffcf0;
+      text-shadow: 0 3px 0 #5f8f9e, 0 0 12px rgba(40, 80, 90, 0.35);
+    }
+    .tagline {
+      margin: 4px 0 24px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--ink);
+    }
+    .card {
+      background: var(--paper);
+      border-radius: 22px;
+      box-shadow: 0 5px 0 var(--paper-edge), 0 10px 24px rgba(30, 50, 30, 0.18);
+      padding: 24px 24px 20px;
+      margin: 0 0 24px;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    ul.features { list-style: none; padding: 0; margin: 0; }
+    ul.features li {
+      position: relative;
+      padding: 0 0 10px 0;
+      padding-inline-start: 30px;
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 4px;
+      top: 0.45em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 2px 0 #cd9123;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .shots img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(30, 50, 30, 0.2);
+    }
+    .links { text-align: center; }
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--hill);
+      box-shadow: 0 4px 0 var(--hill-dark);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button:hover { background: #7cb877; }
+    .button.light {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 4px 0 var(--paper-edge);
+      border: 2px solid var(--paper-edge);
+    }
+    footer {
+      text-align: center;
+      color: #eef6e6;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0 0 6px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="اللغات">
+      <a href="../ar/index.html" hreflang="ar" lang="ar" aria-current="page">العربية</a>
+      <a href="../zh/index.html" hreflang="zh" lang="zh">中文（简体）</a>
+      <a href="../index.html" hreflang="en" lang="en">English</a>
+      <a href="../fr/index.html" hreflang="fr" lang="fr">Français</a>
+      <a href="../de/index.html" hreflang="de" lang="de">Deutsch</a>
+      <a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a>
+      <a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a>
+      <a href="../es/index.html" hreflang="es" lang="es">Español</a>
+    </nav>
+    <header>
+      <img class="logo" src="../images/logo.png" alt="أرنب Arnoob Land يلبس تاجًا ذهبيًا">
+      <h1>Arnoob Land</h1>
+      <p class="tagline">لعبة طبيعة هادئة للأطفال</p>
+    </header>
+
+    <section class="card">
+      <img class="banner" src="../images/feature-graphic.jpg" alt="أرنب يلبس تاجًا في حديقة الربيع، مع زهور وبركة فيها بطة واسم Arnoob Land">
+      <p>حديقة هادئة تحتاج إلى مساعدتك. أرنب صغير يريد أن يجعلها بيتًا من جديد، بذرةً بعد بذرة. ازرع الزهور، وابنِ بركة، وضع الطعام، وانظر من يأتي للزيارة. كل فصل يجلب أصدقاء جددًا من الحيوانات: النحل والبط في الربيع، والسلاحف والطيور الطنانة في الصيف، والثعالب والغُرير في الخريف، وبوم الثلج والقُضاعة في الشتاء.</p>
+      <ul class="features">
+        <li><strong>هادئة ولطيفة:</strong> لا مؤقتات، ولا نقاط تخسرها، ولا شيء تفشل فيه.</li>
+        <li><strong>أصوات الطبيعة فقط:</strong> الرياح والماء والمطر والطيور وأصوات الحيوانات. بلا موسيقى.</li>
+        <li><strong>أربعة فصول و٨٠ حيوانًا</strong> تصادقها، مع حيوانات ذهبية ولحظات نادرة تكتشفها.</li>
+        <li><strong>راقب القمر:</strong> ليلةً بعد ليلة يتغيّر من هلال صغير إلى بدر ثم يعود، والبوم يحب ليالي البدر.</li>
+        <li><strong>التقط الصور</strong> لأصدقائك من الحيوانات في ألبومك: كل صورة تكسبك عملة.</li>
+        <li><strong>تعلّم كيف ترعى أصدقاءك:</strong> لاحظ ما يحتاجه كل حيوان وابنِ له بيته (بركة، كومة جذوع، شجيرة توت...) فيأتي الأصدقاء الجدد أسرع، وحقّق أمنياتهم، وساعد صديقين على اللعب معًا، وأهدِ صديقًا زهرة، وشاهد الصداقات تكبر.</li>
+        <li><strong>أدِر مزرعة صغيرة:</strong> أطعم الدجاج، واعتنِ بالنحل والعنزة، واقطف التفاح والتوت والزهور، وبِعها في كشكك المزدحم للأصدقاء الذين يأتون للشراء. ما اشتريته يُباع بنصف ثمنه، إلا البركة والنباتات والبذور والأشجار.</li>
+        <li><strong>كن مساعد الحديقة:</strong> اقتلع الأعشاب، واجمع الأوراق، وأزل الثلج لكومة السماد، فتعطيك محصولًا إضافيًا ومزرعة أسرع، واسقِ الزهور وأشجار الفاكهة. كل عمل ترفع به مستواك كمساعد للحديقة.</li>
+        <li><strong>اخبز وجهّز الطلبيات:</strong> حوّل البيض والحليب والعسل والتفاح والتوت إلى كعك وفطائر وتارت ومربى تُباع بسعر أعلى، واجمع الحساب عندما يحضر صديق طلبية صغيرة.</li>
+        <li><strong>احسب وأنت تلعب:</strong> كل بيضة تجمعها أو تبيعها، وكل عملة تكسبها أو تصرفها، تظهر كحساب بسيط مثل ٣ + ٢ = ٥.</li>
+        <li><strong>تعلّم الادّخار:</strong> ضع العملات في حصّالتك، وشاهدها تكبر قليلًا كل يوم، وادّخر لتشتري التاج الذهبي.</li>
+        <li><strong>ابنِ التاج الذهبي قطعةً قطعة:</strong> الادّخار يملؤه بالذهب، والأصدقاء يحضرون جواهره الثلاث.</li>
+        <li><strong>لعبة هادئة في كل فصل:</strong> صيد السمك (ثم يعود حرًّا)، وجمع اليراعات (ثم تطير حرّة)، وحصاد الجوز والتفاح في الخريف، وبناء قلعة من الثلج.</li>
+        <li><strong>الغمّيضة مع الأصدقاء:</strong> من صديقك الخامس يختبئ الأصدقاء في أنحاء الحديقة ويلعبون معًا، وعندما تجدهم كلهم يزورك الأصدقاء الذهبيون أكثر.</li>
+        <li><strong>ثماني لغات:</strong> الإنجليزية، والعربية، والصينية (المبسطة)، والفرنسية، والألمانية، واليابانية، والروسية، والإسبانية. تبدأ اللعبة بلغة هاتفك (وبالإنجليزية لأي لغة أخرى)، والكرة الأرضية في شاشة البداية تغيّرها. كُتبت اللعبة بالإنجليزية، وتُرجمت إلى اللغات السبع الأخرى بمساعدة الذكاء الاصطناعي.</li>
+        <li><strong>رحلة طويلة وهادئة:</strong> العب السنة كلها على مدى أيام كثيرة، أو لعبة أقصر في فصل واحد. تُحفظ حديقتك وأنت تلعب.</li>
+        <li><strong>حديقة أحلام، إن شئت:</strong> ادّخر لأرجوحة، وجسر صغير، ونافورة، وبيت فوق الشجرة، وغيرها. يستعملها أصدقاؤك، وقد يأتي أربعة أصدقاء سريّون لرؤيتها.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>في الحديقة</h2>
+      <div class="shots">
+        <img src="../images/ar/1-farm-market.jpg" alt="الحديقة: كشك السوق والأصدقاء يأتون للشراء، وبيت الدجاج، وخلية النحل، والعنزة" loading="lazy">
+        <img src="../images/ar/2-inventory.jpg" alt="بضائعك: بيض وعسل وتفاح وغيرها، مع حساب مثل ٢ + ٢ = ٤" loading="lazy">
+        <img src="../images/ar/3-oven.jpg" alt="الفرن: كعك العسل وفطائر التفاح وتارت التوت ومربى التوت والتفاح، كلٌّ منها يساوي أكثر من مكوّناته" loading="lazy">
+        <img src="../images/ar/4-crown-jar.jpg" alt="الحصّالة، والادّخار للتاج الذهبي" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card links">
+      <h2>لأولياء الأمور</h2>
+      <p>لا حسابات، ولا محادثة، ولا مشتريات. تُعرض الفيديوهات فقط عندما يختار اللاعب مشاهدة واحد منها، مقابل هدية صغيرة في اللعبة: سلة بضائع للبيع، أو بعض العملات، أو مفاجأة للحديقة، أو بذور، أو طعام للحيوانات.</p>
+      <a class="button" href="privacy-policy.html">سياسة الخصوصية</a>
+      <a class="button light" href="../app-ads.txt">app-ads.txt</a>
+    </section>
+
+    <footer>
+      <p>تُرجمت هذه الصفحة من الإنجليزية بمساعدة الذكاء الاصطناعي.</p>
+      <p>&copy; 2026 Arnoob Land</p>
+    </footer>
+  </main>
+</body>
+</html>

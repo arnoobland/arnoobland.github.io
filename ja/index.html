@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnoob Land</title>
+  <meta name="description" content="Arnoob Land：子ども向けの、おだやかな自然のゲーム。小さなうさぎといっしょに庭をもう一度おうちにして、四季をめぐって80ぴきのどうぶつと友だちになり、小さなのうじょうをいとなみ、金のかんむりのためにちょきんしよう。">
+  <meta property="og:title" content="Arnoob Land">
+  <meta property="og:description" content="子ども向けの、おだやかな自然のゲーム：四季をめぐってどうぶつと友だちになり、小さなのうじょうをいとなみ、数えることとちょきんを学ぼう。">
+  <meta property="og:image" content="https://arnoobland.github.io/images/feature-graphic.jpg">
+  <link rel="alternate" hreflang="ar" href="https://arnoobland.github.io/ar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://arnoobland.github.io/zh/">
+  <link rel="alternate" hreflang="en" href="https://arnoobland.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://arnoobland.github.io/fr/">
+  <link rel="alternate" hreflang="de" href="https://arnoobland.github.io/de/">
+  <link rel="alternate" hreflang="ja" href="https://arnoobland.github.io/ja/">
+  <link rel="alternate" hreflang="ru" href="https://arnoobland.github.io/ru/">
+  <link rel="alternate" hreflang="es" href="https://arnoobland.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://arnoobland.github.io/">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <style>
+    :root {
+      --sky: #9fd3e6;
+      --hill: #6fa86a;
+      --hill-dark: #4e8a55;
+      --paper: #fbf5e8;
+      --paper-edge: #e3d6bd;
+      --ink: #6e503c;
+      --gold: #fac83c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(var(--sky) 0, #c8e6ef 380px, var(--hill) 380px, var(--hill-dark) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    :lang(ar) body, body:lang(ar) { font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    nav.langs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 0 16px;
+    }
+    nav.langs a {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(251, 245, 232, 0.75);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav.langs a[aria-current] {
+      background: var(--hill);
+      color: #fff;
+      font-weight: bold;
+    }
+    header { text-align: center; }
+    header img.logo {
+      width: 128px;
+      height: 128px;
+      filter: drop-shadow(0 6px 10px rgba(40, 60, 40, 0.25));
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 2.6rem;
+      color: #fffcf0;
+      text-shadow: 0 3px 0 #5f8f9e, 0 0 12px rgba(40, 80, 90, 0.35);
+    }
+    .tagline {
+      margin: 4px 0 24px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--ink);
+    }
+    .card {
+      background: var(--paper);
+      border-radius: 22px;
+      box-shadow: 0 5px 0 var(--paper-edge), 0 10px 24px rgba(30, 50, 30, 0.18);
+      padding: 24px 24px 20px;
+      margin: 0 0 24px;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    ul.features { list-style: none; padding: 0; margin: 0; }
+    ul.features li {
+      position: relative;
+      padding: 0 0 10px 0;
+      padding-inline-start: 30px;
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 4px;
+      top: 0.45em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 2px 0 #cd9123;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .shots img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(30, 50, 30, 0.2);
+    }
+    .links { text-align: center; }
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--hill);
+      box-shadow: 0 4px 0 var(--hill-dark);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button:hover { background: #7cb877; }
+    .button.light {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 4px 0 var(--paper-edge);
+      border: 2px solid var(--paper-edge);
+    }
+    footer {
+      text-align: center;
+      color: #eef6e6;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0 0 6px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="言語">
+      <a href="../ar/index.html" hreflang="ar" lang="ar">العربية</a>
+      <a href="../zh/index.html" hreflang="zh" lang="zh">中文（简体）</a>
+      <a href="../index.html" hreflang="en" lang="en">English</a>
+      <a href="../fr/index.html" hreflang="fr" lang="fr">Français</a>
+      <a href="../de/index.html" hreflang="de" lang="de">Deutsch</a>
+      <a href="../ja/index.html" hreflang="ja" lang="ja" aria-current="page">日本語</a>
+      <a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a>
+      <a href="../es/index.html" hreflang="es" lang="es">Español</a>
+    </nav>
+    <header>
+      <img class="logo" src="../images/logo.png" alt="金のかんむりをかぶった Arnoob Land のうさぎ">
+      <h1>Arnoob Land</h1>
+      <p class="tagline">子ども向けの、おだやかな自然のゲーム</p>
+    </header>
+
+    <section class="card">
+      <img class="banner" src="../images/feature-graphic.jpg" alt="春の庭にいる、かんむりをかぶったうさぎ。花、カモのいる池、Arnoob Land のタイトル">
+      <p>しずかな庭があなたの助けを待っています。小さなうさぎが、たねを1つぶずつまいて、ここをもう一度おうちにしたいと思っています。花をうえて、池をつくり、おやつをおいて、だれがあそびに来るか見てみよう。きせつごとに新しいどうぶつの友だちがやってきます。春はミツバチとカモ、夏はカメとハチドリ、秋はキツネとアナグマ、冬はシロフクロウとカワウソ。</p>
+      <ul class="features">
+        <li><strong>おだやかで、やさしい：</strong> 時間せいげんなし、へるスコアなし、しっぱいもなし。</li>
+        <li><strong>自然の音だけ：</strong> 風、水、雨、鳥、どうぶつの声。音楽はありません。</li>
+        <li><strong>4つのきせつと80ぴきのどうぶつ</strong> と友だちになれて、金色のどうぶつやめずらしいしゅんかんも見つかります。</li>
+        <li><strong>月を見よう：</strong> 毎ばん少しずつ、新月からまん月になり、またもどります。フクロウはまん月の夜が大すき。</li>
+        <li><strong>しゃしんをとろう：</strong> どうぶつの友だちをアルバムに。しゃしん1まいごとにコインが1まい。</li>
+        <li><strong>友だちを大切にすることを学ぼう：</strong> どうぶつがそれぞれ何をひつようとしているか気づいて、おうち（池、丸太の山、ベリーのしげみ…）をつくってあげると、新しい友だちが早く来てくれます。おねがいをかなえたり、2ひきの友だちをいっしょにあそばせたり、花をプレゼントしたりして、友じょうが育つのを見まもろう。</li>
+        <li><strong>小さなのうじょうをいとなもう：</strong> にわとりにえさをあげ、みつばちとヤギのせわをして、リンゴやベリーや花をつみ、にぎやかなお店で買いに来た友だちにうろう。買ったものは半分のねだんでうれます。でも池、草花、たね、木はうれません。</li>
+        <li><strong>にわのおてつだい：</strong> 草をぬき、おちばをあつめ、雪をどけて、たいひの山をいっぱいにすると、とれるものがふえて、のうじょうも早くなります。花や木に水もあげよう。おてつだいするたびにレベルが上がります。</li>
+        <li><strong>おかしをやいて、ちゅうもんにこたえよう：</strong> たまご、ミルク、はちみつ、リンゴ、ベリーで、ケーキやパイやタルトやジャムをつくると、高くうれます。友だちがちゅうもんをもってきたら、お会計をたしざんしよう。</li>
+        <li><strong>あそびながら数えよう：</strong> たまごをあつめたりうったり、コインをかせいだりつかったりするたびに、3 + 2 = 5 のようなかんたんな計算が出ます。</li>
+        <li><strong>ちょきんを学ぼう：</strong> コインをちょきんばこに入れて、毎日少しずつふえるのを見ながら、金のかんむりのためにためよう。</li>
+        <li><strong>金のかんむりを少しずつつくろう：</strong> ちょきんすると金がたまり、友だちが3つのほうせきをもってきてくれます。</li>
+        <li><strong>どのきせつにも、おだやかなミニゲーム：</strong> 魚つり（魚はまた水にもどります）、ホタルあつめ（あとでとんでいきます）、秋の木の実とリンゴのしゅうかく、雪のとりでづくり。</li>
+        <li><strong>友だちとかくれんぼ：</strong> 5ひきと友だちになったら、友だちは庭のあちこちにかくれたり、いっしょにあそんだりします。みんなと友だちになると、金色の友だちもよく来るようになります。</li>
+        <li><strong>8つの言語：</strong> 英語、アラビア語、中国語（簡体字）、フランス語、ドイツ語、日本語、ロシア語、スペイン語。ゲームはスマートフォンの言語ではじまり（それ以外の言語のときは英語）、タイトル画面の地球のボタンでかえられます。ゲームは英語で書かれ、ほかの7つの言語はAIの助けをかりてほんやくしました。</li>
+        <li><strong>長くて、おだやかなたび：</strong> 何日もかけて1年ぜんぶをあそぶことも、1つのきせつだけのみじかいゲームをあそぶこともできます。庭はあそびながらほぞんされます。</li>
+        <li><strong>すきなら、ゆめの庭も：</strong> ブランコ、小さなはし、ふんすい、ツリーハウスなどのためにちょきんしよう。友だちがそれをつかい、4ひきのひみつの友だちが見に来るかもしれません。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>庭のようす</h2>
+      <div class="shots">
+        <img src="../images/ja/1-farm-market.jpg" alt="庭：買いに来た友だちがいるお店、にわとり小屋、みつばちのすばこ、ヤギ" loading="lazy">
+        <img src="../images/ja/2-inventory.jpg" alt="あなたのしなもの：たまご、はちみつ、リンゴなどと、2 + 2 = 4 のような計算" loading="lazy">
+        <img src="../images/ja/3-oven.jpg" alt="オーブン：はちみつケーキ、アップルパイ、ベリータルト、ジャム。どれもざいりょうより高くうれます" loading="lazy">
+        <img src="../images/ja/4-crown-jar.jpg" alt="ちょきんばこ：金のかんむりのためにためよう" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card links">
+      <h2>保護者のみなさまへ</h2>
+      <p>アカウント、チャット、課金はありません。動画は、お子さまが自分で見ることを選んだときだけ流れ、ゲーム内の小さなプレゼントがもらえます（売るためのしなもののかご、少しのコイン、庭へのびっくりプレゼント、たね、おやつ）。</p>
+      <a class="button" href="privacy-policy.html">プライバシーポリシー</a>
+      <a class="button light" href="../app-ads.txt">app-ads.txt</a>
+    </section>
+
+    <footer>
+      <p>このページは、AIの助けをかりて英語からほんやくしました。</p>
+      <p>&copy; 2026 Arnoob Land</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnoob Land</title>
+  <meta name="description" content="Arnoob Land : un jeu nature tout calme pour les enfants. Aide un petit lapin à refaire du jardin une maison, deviens ami avec 80 animaux au fil des saisons, tiens une petite ferme et économise pour la couronne dorée.">
+  <meta property="og:title" content="Arnoob Land">
+  <meta property="og:description" content="Un jeu nature tout calme pour les enfants : des amis animaux au fil des saisons, une petite ferme, et apprendre à compter et à économiser.">
+  <meta property="og:image" content="https://arnoobland.github.io/images/feature-graphic.jpg">
+  <link rel="alternate" hreflang="ar" href="https://arnoobland.github.io/ar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://arnoobland.github.io/zh/">
+  <link rel="alternate" hreflang="en" href="https://arnoobland.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://arnoobland.github.io/fr/">
+  <link rel="alternate" hreflang="de" href="https://arnoobland.github.io/de/">
+  <link rel="alternate" hreflang="ja" href="https://arnoobland.github.io/ja/">
+  <link rel="alternate" hreflang="ru" href="https://arnoobland.github.io/ru/">
+  <link rel="alternate" hreflang="es" href="https://arnoobland.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://arnoobland.github.io/">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <style>
+    :root {
+      --sky: #9fd3e6;
+      --hill: #6fa86a;
+      --hill-dark: #4e8a55;
+      --paper: #fbf5e8;
+      --paper-edge: #e3d6bd;
+      --ink: #6e503c;
+      --gold: #fac83c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(var(--sky) 0, #c8e6ef 380px, var(--hill) 380px, var(--hill-dark) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    :lang(ar) body, body:lang(ar) { font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    nav.langs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 0 16px;
+    }
+    nav.langs a {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(251, 245, 232, 0.75);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav.langs a[aria-current] {
+      background: var(--hill);
+      color: #fff;
+      font-weight: bold;
+    }
+    header { text-align: center; }
+    header img.logo {
+      width: 128px;
+      height: 128px;
+      filter: drop-shadow(0 6px 10px rgba(40, 60, 40, 0.25));
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 2.6rem;
+      color: #fffcf0;
+      text-shadow: 0 3px 0 #5f8f9e, 0 0 12px rgba(40, 80, 90, 0.35);
+    }
+    .tagline {
+      margin: 4px 0 24px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--ink);
+    }
+    .card {
+      background: var(--paper);
+      border-radius: 22px;
+      box-shadow: 0 5px 0 var(--paper-edge), 0 10px 24px rgba(30, 50, 30, 0.18);
+      padding: 24px 24px 20px;
+      margin: 0 0 24px;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    ul.features { list-style: none; padding: 0; margin: 0; }
+    ul.features li {
+      position: relative;
+      padding: 0 0 10px 0;
+      padding-inline-start: 30px;
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 4px;
+      top: 0.45em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 2px 0 #cd9123;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .shots img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(30, 50, 30, 0.2);
+    }
+    .links { text-align: center; }
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--hill);
+      box-shadow: 0 4px 0 var(--hill-dark);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button:hover { background: #7cb877; }
+    .button.light {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 4px 0 var(--paper-edge);
+      border: 2px solid var(--paper-edge);
+    }
+    footer {
+      text-align: center;
+      color: #eef6e6;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0 0 6px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="Langues">
+      <a href="../ar/index.html" hreflang="ar" lang="ar">العربية</a>
+      <a href="../zh/index.html" hreflang="zh" lang="zh">中文（简体）</a>
+      <a href="../index.html" hreflang="en" lang="en">English</a>
+      <a href="../fr/index.html" hreflang="fr" lang="fr" aria-current="page">Français</a>
+      <a href="../de/index.html" hreflang="de" lang="de">Deutsch</a>
+      <a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a>
+      <a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a>
+      <a href="../es/index.html" hreflang="es" lang="es">Español</a>
+    </nav>
+    <header>
+      <img class="logo" src="../images/logo.png" alt="Le lapin d’Arnoob Land avec une couronne dorée">
+      <h1>Arnoob Land</h1>
+      <p class="tagline">Un jeu nature tout calme pour les enfants</p>
+    </header>
+
+    <section class="card">
+      <img class="banner" src="../images/feature-graphic.jpg" alt="Un lapin couronné dans un jardin de printemps, avec des fleurs, une mare aux canards et le titre Arnoob Land">
+      <p>Un jardin tranquille a besoin de toi. Un petit lapin veut en refaire une maison, une graine après l’autre. Plante des fleurs, construis une mare, pose des friandises et regarde qui vient te rendre visite. Chaque saison amène de nouveaux amis animaux : des abeilles et des canards au printemps, des tortues et des colibris en été, des renards et des blaireaux en automne, des harfangs et des loutres en hiver.</p>
+      <ul class="features">
+        <li><strong>Calme et tout doux :</strong> pas de chrono, pas de score à perdre, rien à rater.</li>
+        <li><strong>Seulement les sons de la nature :</strong> le vent, l’eau, la pluie, les oiseaux et les cris des animaux. Pas de musique.</li>
+        <li><strong>Quatre saisons et 80 animaux</strong> dont devenir ami, avec des animaux dorés et des moments rares à découvrir.</li>
+        <li><strong>Regarde la lune :</strong> nuit après nuit, elle passe de la nouvelle lune à la pleine lune, puis revient, et les hiboux adorent les nuits de pleine lune.</li>
+        <li><strong>Prends des photos</strong> de tes amis animaux pour ton album : chaque photo rapporte une pièce.</li>
+        <li><strong>Apprends à prendre soin de tes amis :</strong> remarque ce dont chaque animal a besoin et construis-lui sa maison (une mare, un tas de bûches, un buisson de baies...) pour que les nouveaux amis viennent plus vite, exauce leurs vœux, aide deux amis à jouer ensemble, offre une fleur à un ami, et regarde les amitiés grandir.</li>
+        <li><strong>Tiens une petite ferme :</strong> nourris les poules, occupe-toi des abeilles et d’une chèvre, cueille des pommes, des baies et des fleurs, et vends-les à ton étal animé aux amis qui viennent acheter. Ce que tu as acheté se revend à moitié prix, sauf la mare, les plantes, les graines et les arbres.</li>
+        <li><strong>Deviens l’aide du jardin :</strong> arrache les mauvaises herbes, ratisse les feuilles et enlève la neige pour le tas de compost, qui donne une récolte en plus et une ferme plus rapide, et arrose les fleurs et les arbres fruitiers. Chaque tâche fait monter ton niveau d’aide du jardin.</li>
+        <li><strong>Fais de la pâtisserie et prépare les commandes :</strong> transforme les œufs, le lait, le miel, les pommes et les baies en gâteaux, tartes, tartelettes et confitures qui se vendent plus cher, et fais l’addition quand un ami apporte une petite commande.</li>
+        <li><strong>Compte en jouant :</strong> chaque œuf ramassé ou vendu, et chaque pièce gagnée ou dépensée, s’affiche comme une addition simple, comme 3 + 2 = 5.</li>
+        <li><strong>Apprends à économiser :</strong> mets des pièces dans ta tirelire, regarde-la grandir un peu chaque jour, et économise pour la couronne dorée.</li>
+        <li><strong>Construis la couronne dorée morceau par morceau :</strong> tes économies la remplissent d’or, et tes amis apportent ses trois joyaux.</li>
+        <li><strong>Un jeu tout calme à chaque saison :</strong> la pêche (les poissons retournent à l’eau), les lucioles (elles s’envolent ensuite), la récolte des noix et des pommes en automne, et un fort de neige à construire.</li>
+        <li><strong>Cache-cache avec tes amis :</strong> dès ton cinquième ami, tes amis se cachent dans le jardin et jouent ensemble, et quand tu les as tous trouvés, les amis dorés viennent plus souvent.</li>
+        <li><strong>Huit langues :</strong> anglais, arabe, chinois (simplifié), français, allemand, japonais, russe et espagnol. Le jeu démarre dans la langue de ton téléphone (en anglais pour toute autre), et le globe de l’écran d’accueil permet d’en changer. Le jeu a été écrit en anglais ; les sept autres langues ont été traduites avec l’aide de l’IA.</li>
+        <li><strong>Un long voyage tout doux :</strong> joue l’année entière sur beaucoup de jours, ou une partie plus courte d’une seule saison. Ton jardin est enregistré au fur et à mesure.</li>
+        <li><strong>Un jardin de rêve, si tu veux :</strong> économise pour une balançoire, un petit pont, une fontaine, une cabane dans l’arbre et plus encore. Tes amis s’en servent, et quatre amis secrets pourraient venir les voir.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Dans le jardin</h2>
+      <div class="shots">
+        <img src="../images/fr/1-farm-market.jpg" alt="Le jardin : l’étal du marché avec des amis qui viennent acheter, le poulailler, la ruche et la chèvre" loading="lazy">
+        <img src="../images/fr/2-inventory.jpg" alt="Tes produits : des œufs, du miel, des pommes et plus encore, avec une addition comme 2 + 2 = 4" loading="lazy">
+        <img src="../images/fr/3-oven.jpg" alt="Le four : gâteaux au miel, tartes aux pommes, tartelettes aux baies et confitures, qui valent chacun plus que leurs ingrédients" loading="lazy">
+        <img src="../images/fr/4-crown-jar.jpg" alt="La tirelire, pour économiser pour la couronne dorée" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card links">
+      <h2>Pour les parents</h2>
+      <p>Pas de compte, pas de messagerie, pas d’achats. Les vidéos ne passent que si l’enfant choisit d’en regarder une, pour un petit cadeau dans le jeu : un panier de produits à vendre, quelques pièces, une surprise pour le jardin, des graines ou des friandises.</p>
+      <a class="button" href="privacy-policy.html">Politique de confidentialité</a>
+      <a class="button light" href="../app-ads.txt">app-ads.txt</a>
+    </section>
+
+    <footer>
+      <p>Cette page a été traduite de l’anglais avec l’aide de l’IA.</p>
+      <p>&copy; 2026 Arnoob Land</p>
+    </footer>
+  </main>
+</body>
+</html>

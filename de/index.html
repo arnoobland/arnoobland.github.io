@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnoob Land</title>
+  <meta name="description" content="Arnoob Land: ein ruhiges Naturspiel für Kinder. Hilf einem kleinen Hasen, den Garten wieder zu einem Zuhause zu machen, freunde dich durch die Jahreszeiten mit 80 Tieren an, führe einen kleinen Hof und spare für die goldene Krone.">
+  <meta property="og:title" content="Arnoob Land">
+  <meta property="og:description" content="Ein ruhiges Naturspiel für Kinder: Freunde dich durch die Jahreszeiten mit Tieren an, führe einen kleinen Hof und lerne zählen und sparen.">
+  <meta property="og:image" content="https://arnoobland.github.io/images/feature-graphic.jpg">
+  <link rel="alternate" hreflang="ar" href="https://arnoobland.github.io/ar/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://arnoobland.github.io/zh/">
+  <link rel="alternate" hreflang="en" href="https://arnoobland.github.io/">
+  <link rel="alternate" hreflang="fr" href="https://arnoobland.github.io/fr/">
+  <link rel="alternate" hreflang="de" href="https://arnoobland.github.io/de/">
+  <link rel="alternate" hreflang="ja" href="https://arnoobland.github.io/ja/">
+  <link rel="alternate" hreflang="ru" href="https://arnoobland.github.io/ru/">
+  <link rel="alternate" hreflang="es" href="https://arnoobland.github.io/es/">
+  <link rel="alternate" hreflang="x-default" href="https://arnoobland.github.io/">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <style>
+    :root {
+      --sky: #9fd3e6;
+      --hill: #6fa86a;
+      --hill-dark: #4e8a55;
+      --paper: #fbf5e8;
+      --paper-edge: #e3d6bd;
+      --ink: #6e503c;
+      --gold: #fac83c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(var(--sky) 0, #c8e6ef 380px, var(--hill) 380px, var(--hill-dark) 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    :lang(ar) body, body:lang(ar) { font-family: "Noto Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif; }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+    nav.langs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 0 16px;
+    }
+    nav.langs a {
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(251, 245, 232, 0.75);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    nav.langs a[aria-current] {
+      background: var(--hill);
+      color: #fff;
+      font-weight: bold;
+    }
+    header { text-align: center; }
+    header img.logo {
+      width: 128px;
+      height: 128px;
+      filter: drop-shadow(0 6px 10px rgba(40, 60, 40, 0.25));
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 2.6rem;
+      color: #fffcf0;
+      text-shadow: 0 3px 0 #5f8f9e, 0 0 12px rgba(40, 80, 90, 0.35);
+    }
+    .tagline {
+      margin: 4px 0 24px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: var(--ink);
+    }
+    .card {
+      background: var(--paper);
+      border-radius: 22px;
+      box-shadow: 0 5px 0 var(--paper-edge), 0 10px 24px rgba(30, 50, 30, 0.18);
+      padding: 24px 24px 20px;
+      margin: 0 0 24px;
+    }
+    .banner {
+      display: block;
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+    h2 { margin: 0 0 10px; font-size: 1.35rem; }
+    p { margin: 0 0 12px; }
+    ul.features { list-style: none; padding: 0; margin: 0; }
+    ul.features li {
+      position: relative;
+      padding: 0 0 10px 0;
+      padding-inline-start: 30px;
+    }
+    ul.features li::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: 4px;
+      top: 0.45em;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 2px 0 #cd9123;
+    }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .shots img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(30, 50, 30, 0.2);
+    }
+    .links { text-align: center; }
+    .button {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: var(--hill);
+      box-shadow: 0 4px 0 var(--hill-dark);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .button:hover { background: #7cb877; }
+    .button.light {
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 4px 0 var(--paper-edge);
+      border: 2px solid var(--paper-edge);
+    }
+    footer {
+      text-align: center;
+      color: #eef6e6;
+      font-size: 0.9rem;
+    }
+    footer p { margin: 0 0 6px; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .shots { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 20px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="langs" aria-label="Sprachen">
+      <a href="../ar/index.html" hreflang="ar" lang="ar">العربية</a>
+      <a href="../zh/index.html" hreflang="zh" lang="zh">中文（简体）</a>
+      <a href="../index.html" hreflang="en" lang="en">English</a>
+      <a href="../fr/index.html" hreflang="fr" lang="fr">Français</a>
+      <a href="../de/index.html" hreflang="de" lang="de" aria-current="page">Deutsch</a>
+      <a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a>
+      <a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a>
+      <a href="../es/index.html" hreflang="es" lang="es">Español</a>
+    </nav>
+    <header>
+      <img class="logo" src="../images/logo.png" alt="Der Hase aus Arnoob Land mit einer goldenen Krone">
+      <h1>Arnoob Land</h1>
+      <p class="tagline">Ein ruhiges Naturspiel für Kinder</p>
+    </header>
+
+    <section class="card">
+      <img class="banner" src="../images/feature-graphic.jpg" alt="Ein Hase mit Krone in einem Frühlingsgarten, mit Blumen, einem Ententeich und dem Titel Arnoob Land">
+      <p>Ein stiller Garten braucht deine Hilfe. Ein kleiner Hase möchte ihn wieder zu einem Zuhause machen, Samen für Samen. Pflanze Blumen, bau einen Teich, leg Leckerlis hin und schau, wer zu Besuch kommt. Jede Jahreszeit bringt neue Tierfreunde: Bienen und Enten im Frühling, Schildkröten und Kolibris im Sommer, Füchse und Dachse im Herbst, Schneeeulen und Otter im Winter.</p>
+      <ul class="features">
+        <li><strong>Ruhig und sanft:</strong> keine Uhr, keine Punkte zum Verlieren, nichts, was schiefgehen kann.</li>
+        <li><strong>Nur Klänge der Natur:</strong> Wind, Wasser, Regen, Vögel und Tierstimmen. Keine Musik.</li>
+        <li><strong>Vier Jahreszeiten und 80 Tiere</strong> zum Anfreunden, dazu goldene Tiere und seltene Momente zum Entdecken.</li>
+        <li><strong>Schau dir den Mond an:</strong> Nacht für Nacht wandert er vom Neumond zum Vollmond und zurück, und Eulen lieben Vollmondnächte.</li>
+        <li><strong>Mach Fotos</strong> von deinen Tierfreunden für dein Album: Jedes Foto bringt eine Münze.</li>
+        <li><strong>Lerne, für Freunde zu sorgen:</strong> Achte darauf, was jedes Tier braucht, und bau ihm ein Zuhause (einen Teich, einen Holzstapel, einen Beerenstrauch...), dann kommen neue Freunde schneller; erfülle ihre Wünsche, hilf zwei Freunden, zusammen zu spielen, schenk einem Freund eine Blume und sieh zu, wie Freundschaften wachsen.</li>
+        <li><strong>Führe einen kleinen Hof:</strong> Füttere die Hühner, kümmere dich um Bienen und eine Ziege, pflück Äpfel, Beeren und Blumen und verkauf sie an deinem belebten Marktstand an die Freunde, die zum Einkaufen kommen. Was du gekauft hast, kannst du für den halben Preis zurückverkaufen, außer Teich, Pflanzen, Samen und Bäumen.</li>
+        <li><strong>Sei Gartenhelfer:</strong> Zupf Unkraut, rech Laub und räum Schnee für den Komposthaufen weg, der eine Extraernte und einen schnelleren Hof bringt, und gieß die Blumen und Obstbäume. Jede Arbeit hebt deine Stufe als Gartenhelfer.</li>
+        <li><strong>Backen und Bestellungen:</strong> Mach aus Eiern, Milch, Honig, Äpfeln und Beeren Kuchen, Törtchen und Marmelade, die mehr einbringen, und rechne die Summe aus, wenn ein Freund eine kleine Bestellung bringt.</li>
+        <li><strong>Rechnen beim Spielen:</strong> Jedes gesammelte oder verkaufte Ei und jede verdiente oder ausgegebene Münze erscheint als einfache Rechnung, wie 3 + 2 = 5.</li>
+        <li><strong>Lerne sparen:</strong> Leg Münzen in deine Spardose, sieh zu, wie sie jeden Tag ein bisschen wächst, und spar für die goldene Krone.</li>
+        <li><strong>Bau die goldene Krone Stück für Stück:</strong> Sparen füllt sie mit Gold, und deine Freunde bringen ihre drei Edelsteine.</li>
+        <li><strong>Ein ruhiges Spiel in jeder Jahreszeit:</strong> Angeln (die Fische schwimmen wieder frei), Glühwürmchen sammeln (sie fliegen danach davon), Nüsse und Äpfel im Herbst ernten und eine Schneeburg bauen.</li>
+        <li><strong>Verstecken mit Freunden:</strong> Ab deinem fünften Freund verstecken sich deine Freunde im Garten und spielen zusammen, und wenn du alle gefunden hast, kommen goldene Freunde öfter.</li>
+        <li><strong>Acht Sprachen:</strong> Englisch, Arabisch, Chinesisch (vereinfacht), Französisch, Deutsch, Japanisch, Russisch und Spanisch. Das Spiel startet in der Sprache deines Handys (bei jeder anderen auf Englisch), und mit der Weltkugel auf dem Startbildschirm kannst du sie wechseln. Das Spiel wurde auf Englisch geschrieben; die anderen sieben Sprachen wurden mithilfe von KI übersetzt.</li>
+        <li><strong>Eine lange, sanfte Reise:</strong> Spiel das ganze Jahr über viele Tage oder ein kürzeres Spiel mit nur einer Jahreszeit. Dein Garten wird beim Spielen gespeichert.</li>
+        <li><strong>Ein Traumgarten, wenn du magst:</strong> Spar für eine Schaukel, eine kleine Brücke, einen Brunnen, ein Baumhaus und mehr. Deine Freunde benutzen sie, und vier geheime Freunde kommen sie vielleicht besuchen.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Im Garten</h2>
+      <div class="shots">
+        <img src="../images/de/1-farm-market.jpg" alt="Der Garten: der Marktstand mit Freunden, die zum Einkaufen kommen, das Hühnerhaus, der Bienenstock und die Ziege" loading="lazy">
+        <img src="../images/de/2-inventory.jpg" alt="Deine Waren: Eier, Honig, Äpfel und mehr, mit einer Rechnung wie 2 + 2 = 4" loading="lazy">
+        <img src="../images/de/3-oven.jpg" alt="Der Ofen: Honigkuchen, Apfelkuchen, Beerentörtchen und Marmelade, die jeweils mehr wert sind als ihre Zutaten" loading="lazy">
+        <img src="../images/de/4-crown-jar.jpg" alt="Die Spardose: Sparen für die goldene Krone" loading="lazy">
+      </div>
+    </section>
+
+    <section class="card links">
+      <h2>Für Eltern</h2>
+      <p>Keine Konten, kein Chat und keine Käufe. Videos laufen nur, wenn das Kind selbst eines ansehen möchte, für ein kleines Geschenk im Spiel: einen Korb Waren zum Verkaufen, ein paar Münzen, eine Überraschung für den Garten, Samen oder Leckerlis.</p>
+      <a class="button" href="privacy-policy.html">Datenschutzerklärung</a>
+      <a class="button light" href="../app-ads.txt">app-ads.txt</a>
+    </section>
+
+    <footer>
+      <p>Diese Seite wurde mithilfe von KI aus dem Englischen übersetzt.</p>
+      <p>&copy; 2026 Arnoob Land</p>
+    </footer>
+  </main>
+</body>
+</html>
